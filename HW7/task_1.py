@@ -1,4 +1,5 @@
 
+
 contacts = [
     {
         "name": "John",
@@ -14,6 +15,10 @@ contacts = [
 
 FORMAT_STR = "{:<15} {:<15} {:>12}"
 
+
+def stats(contacts):
+    print(len(contacts))
+
 def list(contacts):
     print(FORMAT_STR.format("Name", "Last Name", 'Phone'))
     for contact in contacts:
@@ -24,7 +29,7 @@ def list(contacts):
         ))
 
 
-def find(contacts):
+def show (contacts):
     print("Enter Name:")
     name = input("> ")
 
@@ -61,7 +66,7 @@ def add(contacts):
     phone = input("> ")
     new_contact = {
         "name": name,
-        "last name": last_name,
+        "last_name": last_name,
         "phone": phone
     }
     contacts.append(new_contact)
@@ -72,23 +77,26 @@ def add(contacts):
 print("Welcome to the phone book.")
 print("""Enter command:
 * list - to view your contact list.
-* find - find a contact by name
+* show - find a contact by name
+* stats - to show number of contacts
 * add  - add contact
 * del  - deleting a contact
 * exit - for exit""")
 
 while True:
     print("\nEnter command: ")
-    command = input('> ')
-    if command == 'list':
+    command = input("> ")
+    if command == "list":
         list(contacts)
-    elif command == 'find':
-        find(contacts)
-    elif command == 'add':
+    elif command == "show":
+        show(contacts)
+    elif command == "stats":
+        stats(contacts)
+    elif command == "add":
         add(contacts)
-    elif command == 'del':
+    elif command == "del":
         delete(contacts)
-    elif command == 'exit':
+    elif command == "exit":
         break
     else:
         print("Unknown command")
