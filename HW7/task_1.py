@@ -25,7 +25,7 @@ def list(contacts):
         ))
 
 
-def find(contacts):
+def show (contacts):
     print("Enter Name:")
     name = input("> ")
 
@@ -69,11 +69,10 @@ def add(contacts):
 
     print("Contact was saved")
 
-
 print("Welcome to the phone book.")
 print("""Enter command:
 * list - to view your contact list.
-* find - find a contact by name
+* show - find a contact by name
 * add  - add contact
 * del  - deleting a contact
 * exit - for exit""")
@@ -83,8 +82,8 @@ while True:
     command = input('> ')
     if command == 'list':
         list(contacts)
-    elif command == 'find':
-        find(contacts)
+    elif command == 'show':
+        show(contacts)
     elif command == 'add':
         add(contacts)
     elif command == 'del':
