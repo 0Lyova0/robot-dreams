@@ -5,8 +5,10 @@ def separation(somefun):
         print(f"{'='*10}")
     return wrap()
 
+
 @separation
 def test_func():
     print("Hello world!")
 
-test_func
+
+test_func()

@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 def log_time(my_func):
     def wraper():
         print(f"Function {my_func.__name__}\nRun on: {datetime.today()}")
